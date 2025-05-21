@@ -1,6 +1,7 @@
 # @brielov/http-status
 
-A TypeScript library for HTTP status codes, messages, and descriptions, with utilities for creating and throwing HTTP Responses.
+A TypeScript library for HTTP status codes, messages, and descriptions, with
+utilities for creating and throwing HTTP Responses.
 
 ## Installation
 
@@ -17,7 +18,15 @@ bunx jsr add @brielov/http-status
 ## Usage
 
 ```typescript
-import { HttpStatus, getStatusText, getStatusDescription, getStatusClass, isValidStatus, createResponse, throwResponse } from '@brielov/http-status';
+import {
+  createResponse,
+  getStatusClass,
+  getStatusDescription,
+  getStatusText,
+  HttpStatus,
+  isValidStatus,
+  throwResponse,
+} from "@brielov/http-status";
 
 // Get status text
 console.log(getStatusText(HttpStatus.OK)); // "OK"
@@ -33,7 +42,9 @@ console.log(isValidStatus(HttpStatus.OK)); // true
 console.log(isValidStatus(999)); // false
 
 // Create a Response
-const response = createResponse(HttpStatus.NotFound, { headers: { "X-Custom": "test" } });
+const response = createResponse(HttpStatus.NotFound, {
+  headers: { "X-Custom": "test" },
+});
 console.log(response.status); // 404
 console.log(response.statusText); // "Not Found"
 
@@ -51,14 +62,16 @@ try {
 - `HttpStatus`: Enum of HTTP status codes (100–599) per RFC 9110.
 - `getStatusText`: Retrieves status text for a given code.
 - `getStatusDescription`: Retrieves detailed description for a code.
-- `getStatusClass`: Classifies codes (Informational, Success, Redirection, ClientError, ServerError).
+- `getStatusClass`: Classifies codes (Informational, Success, Redirection,
+  ClientError, ServerError).
 - `isValidStatus`: Checks if a status code is valid.
 - `createResponse`: Creates a `Response` with status and custom init options.
 - `throwResponse`: Throws a `Response` with status and custom init options.
 
 ## API Reference
 
-See [JSR documentation](https://jsr.io/@brielov/http-status/doc) for detailed API.
+See [JSR documentation](https://jsr.io/@brielov/http-status/doc) for detailed
+API.
 
 ## License
 
@@ -66,4 +79,5 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## Source
 
-Hosted on [JSR](https://jsr.io/@brielov/http-status) and [GitHub](https://github.com/brielov/http-status).
+Hosted on [JSR](https://jsr.io/@brielov/http-status) and
+[GitHub](https://github.com/brielov/http-status).
